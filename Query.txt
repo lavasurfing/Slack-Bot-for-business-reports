@@ -1,0 +1,14 @@
+Q1 = """Report : I would like a report for 2023 based on the date column that includes:
+    1. A bar chart or graph showing month-wise, product category-wise total sales.
+    2. A bar chart or graph showing total sales by product category.
+    3. A line chart showing total sales by Age Group.
+    4. A pie chart showing total sales by gender.
+    """
+
+Q2 =  """Excel :I need the unique Product Categories and their Month-wise and Gender-wise total Quantity and Total Amount as a table for year 2023 based on the Date column."""
+
+Q3 = "I want the Unique Gender and their month wise total Total Amount as a table for the Year of 2023 based on the Date column."
+
+Q4 = "Plot an bar chart of month wise Total of Total Amount  where legend will be gender for the Year of 2023 based on the Date column."
+
+Q5 =  "Plot an bar chart of month-wise total Quantity for each gender  and Product Category for the year 2023 based on the Date column."

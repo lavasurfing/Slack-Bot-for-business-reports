@@ -1,0 +1,26 @@
+streamlit
+streamlit_lottie
+pandasai
+pyyaml
+numpy
+pandas
+tzdata
+xlrd
+# numpy==2.0.1
+# pandas==2.2.2
+# tzdata==2024.1
+# xlrd >= 2.0.1
+openpyxl
+langchain_groq
+seaborn
+matplotlib
+tabulate
+ipykernel
+nbformat==4.2.0
+plotly
+chromadb
+lancedb
+sentence_transformers
+pymilvus
+qdrant_client
+-e .

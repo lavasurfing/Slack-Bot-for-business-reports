@@ -1,7 +1,9 @@
 # Slack client python package
+import importlib.util
 import slack_sdk
 
-import os
+import os,sys
+
 
 # Creating path
 from pathlib import Path
@@ -9,11 +11,17 @@ from pathlib import Path
 # loading environment variable
 from dotenv import load_dotenv
 
-from flask import Flask
+from flask import Flask, request, Response
 
 from slackeventsapi import SlackEventAdapter
 
+# importing module
 
+# Add the path to the components directory
+sys.path.insert(0,'C:/Users/Ashish/Documents/GitHub Repos/smart-chat-2/Universal-Dataset-Chatbot-with-LLM')
+
+# Import the function from r.py
+from response import get_final_response
 
 #---------------------------------------------------------------------------------
 
@@ -38,10 +46,27 @@ def message(payload):
     text = event.get('text')
     print(text)
     
-    if BOT_ID != user_id:
-        client.chat_postMessage(channel='#llm', text=input('Input something'))
+    # sample query
+    q1 = 'Plot an bar chart of month-wise total Quantity for each gender  and Product Category for the year 2023 based on the Date column'
     
-# here is new comment
+    file_link = get_final_response(q1)
+    
+    if BOT_ID != user_id:
+        # client.chat_postMessage(channel='#llm', text=input('Input something'))
+            response = client.files_upload_v2(
+            channel="C07T5JJHYUT",
+            file=file_link,
+            title="OK",
+            initial_comment="here is your pic",
+            filetype="auto"  # Optional: can specify file type like "png", "jpg" if known
+        )
+            print(response)
+    
+# Slash Command
+@app.route('/send-mark-text', methods=['POST'])
+def send_text():
+    data = request.form
+    
 
 if __name__ == "__main__":
     app.run(debug=True)

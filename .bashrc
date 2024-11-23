@@ -1,0 +1,1 @@
+export SCARF_NO_ANALYTICS=true
